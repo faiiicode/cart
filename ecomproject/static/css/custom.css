@@ -1,0 +1,155 @@
+
+body {
+ font-family: 'Domine', serif;
+}
+
+/**Navbar***/
+
+
+.nav-item{
+    letter-spacing : .2em;
+    font-size :14px;
+    text-transform :uppercase;
+
+}
+
+.dropdown-item {
+
+    letter-spacing : .2em;
+    font-size :14px;
+    text-transform :uppercase;
+
+    }
+
+
+/**Footer***/
+   .mfooter
+       {
+  height: 50px;
+  flex-shrink: 0;
+  font-family: 'Domine', serif;
+  opacity:50;
+   transition:5s;
+
+
+}
+
+.copyright-bar {
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+/**category***/
+
+.my_row_class
+{
+padding-top :15px;
+
+}
+.my_row_class .mx_auto
+{
+color:#000;
+  font-size :12px;
+
+
+}
+
+.mx-zz
+
+{
+color:#000;
+  font-size :12px;
+  border-collapse:separate;
+  border-spacing: 0 1em;
+
+
+}
+.my_img
+{
+width:100% ;
+height:auto;
+}
+
+.my_text
+{
+font-size:30px;
+text_transform:uppercase;
+letter-spacing:.2em;
+}
+
+}
+.img_padd
+{
+padding:5px;
+}
+
+
+
+
+.my_bottom_margin {
+
+margin-top: 20px;
+margin-bottom: 20px;
+
+
+}
+
+.card-body h4
+{
+font-size :14px;
+text_transform:uppercase;
+letter-spacing:.2em;
+}
+
+/*product*/
+
+.product_css {
+padding-top :15px;
+padding-bottom :20px;
+}
+.product_css .mx_auto{
+  color:#000;
+  font-size:12px;
+  text_decoration:none;
+
+}
+/**Search**/
+
+.search_app
+{
+padding-top:20px;
+}
+
+/**Cart**/
+
+.my_custom_table
+{
+min-width:400px;
+font-size:14px;
+}
+
+.my_thread
+{
+font-weight:normal;
+text_transform:uppercase;
+letter-spacing:.2em;
+background-color:#f8f8fa!important;
+}
+
+ .buttons {
+width: 200px;
+margin: 0 auto;
+display: inline;}
+
+.action_btn {
+width: 200px;
+margin: 0 auto;
+display: inline;}
+
+h2{
+    display: inline;
+}
+
+.glyphicon {
+  color:black;
+}

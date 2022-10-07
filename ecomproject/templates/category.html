@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+      {{ category.description|truncatewords:155 }}
+    {% else %}
+      Thank you for using Bookshop.org!
+A BETTER WAY TO BUY BOOKS ONLINE
+
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+{% if category %}
+    {{ category.name }}- Shoping List
+        {% else %}
+        See our new Collections
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+{% if category %}
+<div>
+    <div class="row my_row_class">
+        <div class="mx_auto">
+
+
+        <p><a href="{% url 'ecomapp:Allprodcat' %} ">Our Products  Collections </a></p>
+    </div>
+        </div>
+</div>
+
+    {% endif %}
+
+<div class="mx_auto">
+    {% if category %}
+           <center> <img src="{{category.img.url}}" alt="{{category.name}}" width="500px;" height="500px;"> </center>
+</div>
+
+<br>
+<div>
+   <center> <h1 class="my_text">{{category.name}}</h1> </center>
+    <p class="text-justify">{{category.desc}}</p>
+</div>
+
+{% else %}
+<div>
+    <br>
+    <center>
+    <img class="my_img img_padd" src="{% static 'img/banner.jpg' %}" alt="Our Products">
+    </center>
+</div>
+
+<br>
+
+    <center>
+
+   <p class="text-justify"> Bookshop.org began as an idea to help support bookstores and their communities at a time when more and more people were buying their books online. We saw an opportunity to create an alternative to Amazon for socially-conscious online shoppers. Amazon sells over 60% of all books in the US and is growing. That shift threatens the future of bookstores and will hurt readers, authors, and publishers who rely on a diverse, healthy ecosystem for books. We had a better idea — give readers the convenience of online shopping while supporting independent bookstores at the same time.
+We launched in January of 2020, with just 88 bookstore partners and a team of four passionate book people.
+
+As the COVID-19 pandemic surged, our growing platform helped our community of independent booksellers survive shutdowns. That spring, traffic to Bookshop.org hit 1 million users in a single day. By the end of 2020 we had grown to over 1,000 bookstores, raised over ten million dollars for our profit-sharing pool, and 78% of our customers said they regularly bought books from Amazon before they made the switch.
+
+Bookshop.org has since expanded internationally, launching Bookshop.org UK and Bookshop.org Spain. As a Climate Neutral company, we are committed to operating sustainably. Certified as a B Corp, Bookshop.org puts our mission and the public good above financial interests, giving over 80% of our profit margin to independent bookstores. It is written in our governance documents that we will never sell the company to Amazon or any major U.S. retailer.</p>
+
+{% endif %}<center>
+<h1 class="my_text" style="font-size:18px;">Our Products</h1></center>
+<div class="container">
+    <div class="row mx-zz">
+        {% for product in products.object_list %}
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-4  col-lg-4">
+            <div class="card text-center" style="min-width=18rem;">
+            <a href="{{product.get_url}}"><img  class="card-img-top my_img" src= "{{product.img.url}}" alt="{{product.name}}">  </a>
+            <div class="card-body">
+                <h4>{{product.name}}</h4>
+                <p>$ {{product.price}}</p>
+
+
+            </div>
+
+            </div>
+              </div>
+      {% endfor %}
+
+    </div>
+<div class="mx_auto">
+    {% if products.paginator.num_pages > 1 %}
+    <hr>
+    <div class="text-center">
+        {% for pg in products.paginator.page_range %}
+        <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %}  active {% endif %}">{{pg}}</a>
+         {% endfor %}
+    </div>
+    {% endif %}
+
+</div>
+</div>
+{% endblock %}
